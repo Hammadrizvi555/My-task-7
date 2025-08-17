@@ -5,7 +5,7 @@ from .models import User, Post , Comment
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username', 'email']
+        fields = ['id', 'username', 'email','password']
         extra_kwargs = {'password': {'write_only': True}}
         
 class PostSerializer(serializers.ModelSerializer):
@@ -23,3 +23,4 @@ class CommentSerializer(serializers.ModelSerializer):
         fields = ['id', 'post', 'author', 'content', 'created_at']
         read_only_fields = ['post', 'author']
         
+
